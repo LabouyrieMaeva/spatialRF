@@ -84,7 +84,9 @@
 </ul>
 </li>
 </ul>
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. Please edit that file --><!-- badges: start -->
+<p><a href="https://github.com/blasbenito/spatialRF"><img src="https://img.shields.io/badge/devel%20version-1.0.1-blue.svg"></a></p>
+<p><a href="https://github.com/blasbenito/spatialRF"><img src="https://img.shields.io/badge/CRAN-not_published-red"></a> <!-- badges: end --></p>
 </div>
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
@@ -95,7 +97,7 @@
 <li>Principal coordinate analysis of neighbor matrices <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304380006000925">(Dray, Legendre, and Peres-Neto 2006)</a>.</li>
 <li>Distance matrix columns as explanatory variables <a href="https://peerj.com/articles/5518/">(Hengl et al. 2018)</a>.</li>
 </ul>
-<p>The package is designed to minimize the amount of code required to fit a spatial model from a training dataset, the names of the response and the predictors, and a distance matrix, as the non-runnable example below shows.</p>
+<p>The package is designed to minimize the amount of code required to fit a spatial model from a training dataset, the names of the response and the predictors, and a distance matrix, as the example below shows.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">spatial.model</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rf_spatial.html">rf_spatial</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">your_dataframe</span>,
@@ -234,7 +236,7 @@
 <p>The model output can be printed or plotted with a plethora of functions such as <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>, <code><a href="reference/print_importance.html">print_importance()</a></code>, <code><a href="reference/print_performance.html">print_performance()</a></code>, <code><a href="reference/plot_importance.html">plot_importance()</a></code>, <code><a href="reference/print_moran.html">print_moran()</a></code>, <code><a href="reference/plot_response_curves.html">plot_response_curves()</a></code>, <code>plot_response_surfaces)</code>, or <code><a href="reference/plot_moran.html">plot_moran()</a></code>, among others.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_response_curves.html">plot_response_curves</a></span><span class="op">(</span><span class="va">model.non.spatial</span><span class="op">)</span></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-11-1.png"><!-- --> In the response curves above, the other predictors are set to their quantiles 0.1, 0.5, and 0.8, but the user can change this behaviour by modifiying the values of the <code>quantiles</code> argument.</p>
+<p><img src="README_files/figure-gfm/unnamed-chunk-11-1.png"><!-- --> In the response curves above, the other predictors are set to their quantiles 0.1, 0.5, and 0.8, but the user can change this behavior by modifying the values of the <code>quantiles</code> argument.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_response_surfaces.html">plot_response_surfaces</a></span><span class="op">(</span>
   x <span class="op">=</span> <span class="va">model.non.spatial</span>,
@@ -247,7 +249,7 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_importance.html">plot_importance</a></span><span class="op">(</span><span class="va">model.non.spatial</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-13-1.png"><!-- --></p>
 <p><strong>Predicting onto new data</strong></p>
-<p>Models fitted with <code><a href="reference/rf.html">rf()</a></code> and other <code>rf_X()</code> functions within the pacakge can be predicted onto new data just as it is done with <code>ranger()</code> models:</p>
+<p>Models fitted with <code><a href="reference/rf.html">rf()</a></code> and other <code>rf_X()</code> functions within the package can be predicted onto new data just as it is done with <code>ranger()</code> models:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">predicted</span> <span class="op">&lt;-</span> <span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span>
   object <span class="op">=</span> <span class="va">model.non.spatial</span>,
@@ -358,43 +360,43 @@
 <tbody>
 <tr class="odd">
 <td align="left">climate_bio1_average</td>
-<td align="right">0.275</td>
+<td align="right">0.259</td>
 </tr>
 <tr class="even">
 <td align="left">climate_bio1_average_X_bias_area_km2</td>
-<td align="right">0.255</td>
-</tr>
-<tr class="odd">
-<td align="left">climate_hypervolume</td>
-<td align="right">0.236</td>
-</tr>
-<tr class="even">
-<td align="left">spatial_predictor_0_2</td>
 <td align="right">0.227</td>
 </tr>
 <tr class="odd">
-<td align="left">spatial_predictor_0_6</td>
-<td align="right">0.202</td>
+<td align="left">climate_hypervolume</td>
+<td align="right">0.223</td>
 </tr>
 <tr class="even">
 <td align="left">spatial_predictor_1500_2</td>
-<td align="right">0.179</td>
+<td align="right">0.217</td>
 </tr>
 <tr class="odd">
-<td align="left">spatial_predictor_0_11</td>
+<td align="left">spatial_predictor_0_6</td>
+<td align="right">0.197</td>
+</tr>
+<tr class="even">
+<td align="left">spatial_predictor_0_2</td>
+<td align="right">0.166</td>
+</tr>
+<tr class="odd">
+<td align="left">spatial_predictor_0_7</td>
 <td align="right">0.135</td>
 </tr>
 <tr class="even">
-<td align="left">bias_species_per_record</td>
-<td align="right">0.109</td>
+<td align="left">spatial_predictor_0_11</td>
+<td align="right">0.117</td>
 </tr>
 <tr class="odd">
 <td align="left">neighbors_count</td>
-<td align="right">0.109</td>
+<td align="right">0.112</td>
 </tr>
 <tr class="even">
-<td align="left">spatial_predictor_0_7</td>
-<td align="right">0.109</td>
+<td align="left">bias_species_per_record</td>
+<td align="right">0.105</td>
 </tr>
 </tbody>
 </table>
@@ -408,7 +410,7 @@
 <p>In brief, the method consist on transforming the distance matrix into a double-centered matrix of normalized weights, to then compute the positive eigenvectors of the weights matrix (a.k.a, Moran’s Eigenvector Maps, or MEMs).</p>
 <p>The MEMs are included in the model one by one in the order of their Moran’s I, and the subset of MEMs maximizing the model’s R squared and minimizing the Moran’s I of the residuals and the number of MEMs added to the model are selected, as optimization plot below shows (dots linked by lines represent the selected spatial predictors).</p>
 <p><img src="README_files/figure-gfm/unnamed-chunk-25-1.png"><!-- --></p>
-<p>The addition of spatial predictors increases the number of total predictors used during model training (from 15 to 41), and that might have an impact on model performance because the hyperparameter <code>mtry</code> is now likely lower than it should be. Applying tuning (now using default sets of hyperparameters) again may help to solve the issue.</p>
+<p>The addition of spatial predictors increases the number of total predictors used during model training (from 15 to 38), and that might have an impact on model performance because the hyperparameter <code>mtry</code> is now likely lower than it should be. Applying tuning (now using default sets of hyperparameters) again may help to solve the issue.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model.spatial.tuned</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rf_tuning.html">rf_tuning</a></span><span class="op">(</span>
   model <span class="op">=</span> <span class="va">model.spatial</span>
@@ -419,26 +421,26 @@
 <span id="cb28-4"><a href="#cb28-4"></a></span>
 <span id="cb28-5"><a href="#cb28-5"></a><span class="co">##   - num.trees:     500</span></span>
 <span id="cb28-6"><a href="#cb28-6"></a></span>
-<span id="cb28-7"><a href="#cb28-7"></a><span class="co">##   - mtry:          27</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="co">##   - mtry:          13</span></span>
 <span id="cb28-8"><a href="#cb28-8"></a></span>
-<span id="cb28-9"><a href="#cb28-9"></a><span class="co">##   - min.node.size: 10</span></span></code></pre></div>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="co">##   - min.node.size: 5</span></span></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-26-1.png"><!-- --> The comparison of the original spatial model and the tuned one shows a small increase in the R squared of the model.</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/print_performance.html">print_performance</a></span><span class="op">(</span><span class="va">model.spatial</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">## </span></span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="co">## Model performance </span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="co">##   - R squared (OOB):                 0.569</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="co">##   - Pseudo R squared:                0.755</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="co">##   - RMSE:                            2271.729</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="co">##   - Normalized RMSE:                 0.656</span></span></code></pre></div>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="co">##   - R squared (OOB):                 0.576</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co">##   - Pseudo R squared:                0.759</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="co">##   - RMSE:                            2255.182</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="co">##   - Normalized RMSE:                 0.651</span></span></code></pre></div>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/print_performance.html">print_performance</a></span><span class="op">(</span><span class="va">model.spatial.tuned</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb32"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co">## </span></span>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="co">## Model performance </span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="co">##   - R squared (OOB):                 0.587</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="co">##   - Pseudo R squared:                0.766</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="co">##   - RMSE:                            2183.907</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="co">##   - Normalized RMSE:                 0.63</span></span></code></pre></div>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="co">##   - R squared (OOB):                 0.58</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="co">##   - Pseudo R squared:                0.762</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="co">##   - RMSE:                            2205.843</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="co">##   - Normalized RMSE:                 0.637</span></span></code></pre></div>
 <p>From this point we work with the tuned spatial model.</p>
 </div>
 <div id="assessing-model-performance-on-spatially-independent-folds" class="section level3">
@@ -499,7 +501,7 @@
 <tr class="even">
 <td align="left">Spatial</td>
 <td align="left">r.squared</td>
-<td align="right">0.397</td>
+<td align="right">0.399</td>
 </tr>
 <tr class="odd">
 <td align="left">Non-spatial</td>
@@ -509,7 +511,7 @@
 <tr class="even">
 <td align="left">Spatial</td>
 <td align="left">rmse</td>
-<td align="right">2731.425</td>
+<td align="right">2755.388</td>
 </tr>
 </tbody>
 </table>
@@ -544,7 +546,13 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/BlasBenito/spatialRF/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/BlasBenito/spatialRF/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
